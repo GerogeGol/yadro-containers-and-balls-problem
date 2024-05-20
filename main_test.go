@@ -101,6 +101,18 @@ func TestInput(t *testing.T) {
 				{0, 0, 1},
 			},
 		},
+		{
+			input: `3
+1000000000 20 30
+1 1 1000000000
+1000000000 0 1
+	`,
+			want: [][]int{
+				{1000000000, 20, 30},
+				{1, 1, 1000000000},
+				{1000000000, 0, 1},
+			},
+		},
 	}
 	for i, c := range cases {
 		t.Run(fmt.Sprintf("Case %d", i), func(t *testing.T) {
